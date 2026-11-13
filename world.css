@@ -1,0 +1,15 @@
+/* 世界設定 Ver.1.0 の控えめな色彩調整。既存のレスポンシブ構造を維持。 */
+.place-note{margin:5px 0 0;color:#74664f;font-size:11px;line-height:1.65}
+.date-line{gap:7px}
+.date-line>div:nth-child(2){flex:1.5}
+.date-line>div:nth-child(2) strong{font-size:13px;line-height:1.4;white-space:normal}
+.topbar{border-bottom-color:#986e4d}
+.panel{border-color:#b9a082;box-shadow:0 7px 18px #3f2d2416}
+.panel-head{background:#eadac1}
+.seal{border-color:#9a6c4c;color:#935d3c}
+.tag{border-color:#a77d61}
+.identity{background:linear-gradient(145deg,#2a443c,#40352f)}
+.speech{border-left-color:#9b5e50}
+.gold{background:#a66d47}
+.primary{background:#2d4c43}
+.kicker{color:#865244}

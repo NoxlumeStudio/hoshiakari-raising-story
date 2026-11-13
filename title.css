@@ -1,0 +1,24 @@
+/* 描き込まれたタイトルとボタンの位置を画像座標に合わせて保持する。 */
+body.title-mode{margin:0;background:#121b2b;overflow:hidden}
+body.title-mode .app-shell{max-width:none;padding:0}
+body.title-mode .topbar,body.title-mode footer{display:none}
+body.title-mode main{min-height:0;padding:0}
+.title-screen{width:100vw;height:100dvh;display:grid;place-items:center;overflow:hidden;background:#121b2b}
+.title-stage{position:relative;aspect-ratio:1672/941;width:min(100vw,177.6833dvh);max-height:100dvh;flex:none;isolation:isolate}
+.title-art{display:block;width:100%;height:100%;object-fit:contain;user-select:none;pointer-events:none}
+.title-hit{position:absolute;z-index:2;display:block;padding:0;border:0;border-radius:4%;background:transparent;color:transparent;box-shadow:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.title-hit:hover:not(:disabled){filter:none;background:#fff8d20b}
+.title-hit:focus-visible{outline:3px solid #fff3ad;outline-offset:3px;box-shadow:0 0 0 6px #163c35ad}
+.title-hit-new{left:35%;top:64%;width:30%;height:10%}
+.title-hit-continue{left:35%;top:77.6%;width:30%;height:10%}
+.title-message{position:absolute;z-index:3;top:89%;left:26%;width:48%;min-height:0;margin:0;text-align:center;color:#fff5d5;font:700 clamp(12px,1.4vw,20px) "Yu Mincho",serif;text-shadow:0 2px 6px #000;background:transparent;pointer-events:none}
+.name-dialog{position:fixed;inset:0;margin:auto;width:min(520px,90vw);max-width:90vw;max-height:92dvh;overflow:auto;padding:clamp(20px,3vw,35px);border:4px double #b89959;border-radius:22px;background:linear-gradient(135deg,#fff9e9,#efe1bf);box-shadow:0 20px 55px #000b;color:#263e31;font-family:"Yu Mincho","Hiragino Mincho ProN",serif}
+.name-dialog::backdrop{background:#0b1727a6}
+.name-dialog h2{font-size:clamp(21px,2.4vw,29px);line-height:1.5;text-align:center;color:#2f5038;margin:0 0 24px}
+.name-dialog label{display:block;font-weight:700;font-size:16px;margin-bottom:8px}
+.name-dialog input{display:block;width:100%;min-height:48px;padding:10px 14px;border:2px solid #bba06c;border-radius:9px;font:20px "Yu Gothic",sans-serif;background:#fffdf6;color:#273d33}
+.name-error{min-height:1.6em;margin:7px 0;color:#a34536;font-size:14px}
+.name-dialog-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.name-dialog-buttons button{flex:1 1 170px;min-height:47px;padding:9px 15px;border:1px solid #b89959;border-radius:10px;font-size:16px}
+.name-dialog-buttons .name-confirm{background:#274b35;color:#fff1cf}
+@media(max-height:500px){.name-dialog{padding:14px 20px}.name-dialog h2{margin-bottom:10px;font-size:20px}.name-dialog-buttons button{min-height:39px}.name-dialog input{min-height:40px}.name-error{margin:3px 0}}

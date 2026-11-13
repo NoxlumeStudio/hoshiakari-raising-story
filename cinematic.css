@@ -1,0 +1,54 @@
+/* 画面B・Cの独立した16:9ステージ。文字はすべてHTMLで描画する。 */
+body.cinematic-mode{margin:0;background:#171e19;overflow:hidden}
+body.cinematic-mode .app-shell{max-width:none;padding:0}
+body.cinematic-mode .topbar,body.cinematic-mode footer{display:none}
+body.cinematic-mode main{padding:0;min-height:0}
+.novel-screen,.report-screen{height:100dvh;width:100%;display:grid;place-items:center;overflow:hidden;background:#121b16;font-family:"Yu Mincho","Hiragino Mincho ProN",serif}
+.novel-stage,.report-stage{position:relative;aspect-ratio:16/9;width:min(100vw,177.7778dvh);max-height:100dvh;overflow:hidden;container-type:inline-size;isolation:isolate;color:#2f2619;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.novel-backdrop,.report-ambience{position:absolute;inset:0;background:radial-gradient(circle at 25% 25%,#a6a47d 0%,#4d634d 42%,#283d35 100%);z-index:0}
+.novel-background{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.novel-character,.report-character{position:absolute;left:-1%;top:0;bottom:0;width:62%;height:120%;z-index:2;pointer-events:none}
+.novel-portrait,.report-portrait{height:100%;width:100%;object-fit:contain;object-position:center bottom}
+.novel-location{position:absolute;left:1.5%;top:1.5%;z-index:7;border:1px solid #ccaf72;border-radius:50px;background:#213d2eea;color:#fff3cf;padding:.55% 2.4%;font-size:1.65cqw;font-weight:700;box-shadow:0 3px 10px #0006}
+.novel-controls{position:absolute;right:1.5%;top:1.5%;z-index:8;display:flex;gap:1cqw}
+.novel-control{background:#284329 url('assets/ui_button_v2.png') center/100% 100% no-repeat;border:0;color:#fff7d8;min-width:11cqw;height:3.6cqw;padding:.2cqw 1.2cqw;font:700 1.48cqw "Yu Mincho",serif;text-shadow:0 1px 2px #0008;cursor:pointer;box-shadow:none}
+.novel-control:hover{filter:brightness(1.12)}
+.novel-dialogue{position:absolute;left:1%;right:1%;top:79%;height:20%;z-index:5;background:url('assets/ui_dialogue_v2.png') center/100% 100% no-repeat;display:flex;align-items:center;padding:1.6% 9% 1% 10%}
+.novel-dialogue p{font-size:1.65cqw;line-height:1.55;font-weight:700;margin:0;width:100%;max-height:90%;overflow:hidden}
+.novel-name,.report-name{position:absolute;left:4.6%;top:-13%;width:19%;height:35%;background:url('assets/ui_nameplate_v2.png') center/100% 100% no-repeat;display:grid;place-items:center;color:#f8efd5;text-shadow:0 2px 2px #14291e;font:700 1.55cqw "Yu Mincho",serif;white-space:nowrap;overflow:hidden;padding:0 2.5%}
+.novel-counter{position:absolute;right:6%;bottom:12%;font-size:1.2cqw;color:#806e4c}
+.report-stage{background:linear-gradient(120deg,#a4a07a,#e7d2a1 60%,#594e36)}
+.report-ambience{background:radial-gradient(circle at 18% 22%,#b7b49a,#658475 48%,#253e37)}
+.report-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;pointer-events:none}
+.report-character{left:0;top:2%;width:68%;height:89%;opacity:.96}
+.report-panel{position:absolute;z-index:4;right:2%;top:7%;height:74%;width:31%;padding:1.3% 2%;overflow:hidden;border:5px double #aa874a;border-radius:3cqw;background:linear-gradient(#fff7e9f5,#f7e5c8f6);box-shadow:0 6px 28px #0006;font-weight:700}
+.report-kicker{font-size:.78cqw;letter-spacing:.1em;color:#82714f}.report-panel h2{font-size:2.05cqw;margin:.3cqw 0;text-align:center;color:#284631}.report-period{text-align:center;margin:0 0 .4cqw;padding:.3cqw;background:#e7d4af;font-size:1.13cqw}
+.report-section{border-top:1px solid #d2b985;padding:.35cqw 0}.report-section h3{margin:.1cqw 0 .3cqw;font-size:1.16cqw;color:#896d3c}.report-row-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:.7cqw}.report-row{display:flex;justify-content:space-between;gap:.3cqw;border-bottom:1px solid #c5b59b;padding:.2cqw .25cqw;font-size:1.1cqw;white-space:nowrap}.report-row strong{color:#2d643b}.report-row strong.negative{color:#a3553d}.report-empty{font-size:1.1cqw;color:#796c5c}.report-details{font-size:.88cqw;margin-top:.4cqw;line-height:1.35}.report-details summary{cursor:pointer;color:#386247}.report-details ol{padding-left:1.4em}
+.report-name{z-index:7;top:77.5%;left:3%;width:23%;height:7%;padding:0 3%}
+.report-panel:has(.report-details[open]){overflow:auto}
+.report-trust-note{margin:.3cqw .1cqw;font-size:1cqw;line-height:1.45;color:#885343}
+.report-comment{position:absolute;left:1%;bottom:2%;width:67%;min-height:18%;z-index:5;background:url('assets/ui_dialogue_v2.png') center/100% 100% no-repeat;padding:1.5% 5% 2.5% 7%;display:flex;align-items:center}.report-comment p{font-size:1.65cqw;line-height:1.55;font-weight:700;margin:0;max-height:100%;overflow:hidden}.report-comment-name{display:none}
+.report-next{position:absolute;right:2%;bottom:6%;width:29%;height:11%;z-index:6;display:flex;align-items:center;justify-content:center;min-width:0;min-height:0;padding:0 1cqw;overflow:hidden;white-space:nowrap;background:url('assets/ui_button_v2.png') center/100% 100% no-repeat;border:0;color:#fff6d9;font:700 1.83cqw/1.1 "Yu Mincho",serif;cursor:pointer;text-shadow:0 2px 2px #10271b}
+.report-next:hover{filter:brightness(1.12)}
+@media(max-aspect-ratio:10/12){.novel-screen,.report-screen{height:100dvh}.novel-stage,.report-stage{width:100vw;max-height:100dvh}.novel-dialogue p{font-size:2cqw}.novel-control{font-size:1.7cqw}}
+@media(max-height:420px){.novel-control{min-height:28px;font-size:12px}.novel-dialogue p{font-size:max(12px,1.65cqw)}.report-next{font-size:1.83cqw}}
+/* イベントは立ち絵を重ねず、16:9のスチルと既存ノベル枠で描画。 */
+.event-backdrop{background:radial-gradient(circle at 35% 24%,#b9ac83,#4b6654 52%,#1b302a)}
+.event-art{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:1;pointer-events:none}
+.event-location{border-radius:1.2cqw;max-width:78%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.event-dialogue{z-index:6}
+.event-dialogue p{padding-right:18%;font-size:1.65cqw}
+.event-advance{position:absolute;right:13%;bottom:23%;z-index:8;min-height:2.8cqw;min-width:8.5cqw;padding:.35cqw .8cqw;color:#fff2cb;background:#294b37;border:1px solid #c7ab73;font:700 1.12cqw 'Yu Mincho',serif;white-space:nowrap}
+.event-choices{position:absolute;top:34%;left:43%;right:10%;bottom:24%;z-index:7;display:flex;flex-direction:column;justify-content:center;gap:.9cqw;pointer-events:none}
+.event-choices button{pointer-events:auto;width:100%;min-height:4.3cqw;padding:.7cqw 1.4cqw;border:2px solid #c6a76c;border-radius:.8cqw;background:linear-gradient(120deg,#244b38f5,#3e684cee);color:#fff6de;text-align:left;text-shadow:0 1px 2px #11281e;font:700 1.35cqw 'Yu Mincho',serif;box-shadow:0 3px 10px #0008}
+.event-choices button:focus-visible{outline:3px solid #f4dc94}
+@media(max-height:420px){.event-dialogue p{font-size:max(12px,1.65cqw)}.event-choices button{min-height:30px;font-size:max(11px,1.35cqw);padding:4px 9px}.event-advance{min-height:24px;font-size:11px}}
+/* 誕生日スチルは単独レイヤー。年齢ごとのトリミング調整に対応する。 */
+.birthday-stage .birthday-art{object-fit:contain;object-position:center center}
+.birthday-dialogue p{font-size:1.65cqw}
+.birthday-stage .novel-controls{right:1.5%;top:1.5%}
+/* オープニングは既存イベントのノベル枠と送りボタンを共有する。 */
+.opening-stage .opening-art{object-fit:contain;object-position:center center}
+.opening-stage .opening-dialogue p{font-size:1.65cqw;line-height:1.55;max-height:100%;overflow:hidden;white-space:pre-line;padding-right:19%}
+.opening-dialogue .event-advance{right:12%;bottom:21%}
+@media(max-height:420px){.opening-stage .opening-dialogue p{font-size:max(12px,1.65cqw)}}

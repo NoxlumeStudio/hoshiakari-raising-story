@@ -1,0 +1,8 @@
+#se-controls{display:flex;align-items:center;gap:7px;z-index:15;white-space:nowrap}
+#se-controls button{font-size:12px;line-height:1.2;padding:7px 9px;min-width:65px;border:1px solid #b99c61;border-radius:8px;background:#274936;color:#fff4cf}
+#se-controls input{width:72px;accent-color:#b99c61;cursor:pointer}
+.title-stage #se-controls{position:absolute;top:2%;right:16%;max-width:14%;padding:clamp(2px,.35cqw,6px) clamp(3px,.48cqw,8px);border-radius:9px;background:#122b27c9}
+.title-stage #se-controls button{font-size:clamp(9px,.72cqw,13px);min-width:0;padding:.35em .55em}
+.title-stage #se-controls input{width:clamp(25px,3.5cqw,58px);min-width:0}
+.top-actions #se-controls{margin-left:5px}
+@media(max-width:600px){#se-controls input{width:53px}.top-actions #se-controls{margin-left:0}}

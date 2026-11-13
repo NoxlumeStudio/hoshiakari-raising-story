@@ -1,0 +1,26 @@
+/* 1920×1080の一枚絵と独立UI。画像は後日 assets/ に登録するだけで切り替わる。 */
+body:has(.ending-screen),body:has(.ending-summary){overflow:hidden}
+body:has(.ending-screen) .app-shell,body:has(.ending-summary) .app-shell{max-width:none;margin:0;padding:0;width:100%}
+body:has(.ending-screen) header,body:has(.ending-summary) header,body:has(.ending-screen) footer,body:has(.ending-summary) footer{display:none!important}
+body:has(.ending-screen) main,body:has(.ending-summary) main{padding:0!important;margin:0!important;max-width:none!important;width:100%!important}
+.ending-screen,.ending-summary{width:100vw;height:100dvh;overflow:hidden;background:#14251f;display:grid;place-items:center;color:#33251a;font-family:'Yu Mincho','Hiragino Mincho ProN',serif}
+.ending-stage{position:relative;width:min(100vw,177.77778dvh);height:min(100dvh,56.25vw);overflow:hidden;isolation:isolate;container-type:inline-size;background:#2d4138;cursor:pointer}
+.ending-fallback,.ending-art{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.ending-fallback{background:radial-gradient(ellipse at 26% 38%,#ba9f79 0,#657a65 44%,#213b38 90%)}
+.ending-art{object-fit:cover;pointer-events:none}
+.ending-stage:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,27,22,.48),transparent 24%,transparent 63%,rgba(23,24,19,.16));pointer-events:none;z-index:1}
+.ending-location,.ending-progress{position:absolute;z-index:4;top:2.2%;font-size:clamp(11px,1.4vw,26px);letter-spacing:.06em;color:#fff4d7;text-shadow:0 2px 5px #172018;background:rgba(21,43,30,.76);border:1px solid #c8a960;border-radius:999px;padding:.4em 1.2em}
+.ending-location{left:2%}.ending-progress{right:2%}
+.ending-dialogue{position:absolute;z-index:3;left:1.2%;right:1.2%;bottom:2%;min-height:20%;box-sizing:border-box;padding:2.8% 4.8% 2.2%;border:3px solid #bc9b58;border-radius:clamp(12px,2vw,32px);background:linear-gradient(120deg,rgba(255,249,230,.97),rgba(246,227,191,.96));box-shadow:inset 0 0 0 2px #fff6de,0 5px 18px #1b251a9c;display:flex;align-items:center}
+.ending-dialogue p{margin:0;padding-right:12%;font-size:1.65cqw;line-height:1.55;letter-spacing:normal;font-weight:700;max-height:5.1em;overflow:hidden;overflow-wrap:anywhere}
+.ending-speaker{position:absolute;top:-18%;left:4%;min-width:15%;padding:.22em 1.7em;font-size:clamp(13px,1.65vw,29px);color:#fff7df;background:#203e29;border:2px solid #d5b774;border-radius:999px;text-align:center;box-shadow:0 2px 9px #22361eaa}
+.ending-advance{position:absolute;right:2%;bottom:10%;border:1px solid #d0a351;border-radius:100px;padding:.5em 1.2em;color:#f8edcf;background:#23452c;font-size:clamp(12px,1.35vw,24px);cursor:pointer}
+.ending-advance:hover,.ending-advance:focus-visible{background:#416c3f;outline:2px solid #e4c477}
+.ending-closing{justify-content:center;text-align:center}.ending-closing p{padding:0 9%;font-weight:bold}
+.ending-finish{position:absolute;z-index:3;bottom:25%;right:3%;color:#fff6d9;text-shadow:0 2px 8px #182a23;font-size:clamp(12px,1.5vw,26px)}
+.ending-summary{padding:3vw;box-sizing:border-box;background:radial-gradient(circle at 45% 25%,#4c6b4e,#142c2a 80%)}
+.ending-summary-card{width:min(760px,92vw);max-height:90dvh;overflow:auto;padding:clamp(20px,4vw,52px);box-sizing:border-box;text-align:center;color:#342619;border:3px solid #b49354;border-radius:24px;background:#f7ecd0;box-shadow:0 25px 65px #070d0b99}
+.ending-summary-card h2{font-size:clamp(25px,3vw,46px);margin:.4em 0}.ending-summary-card>p{font-size:clamp(16px,2vw,26px)}
+.ending-summary-stats{display:flex;justify-content:center;flex-wrap:wrap;gap:.4em 1.2em;margin:1.5em 0}.ending-summary-sub{font-size:14px!important}
+@media(max-aspect-ratio: 10/9){.ending-screen:before{content:'画面を横向きにすると、物語をより大きく表示できます。';position:absolute;top:2%;z-index:6;color:#fff7d7;font-size:12px}.ending-speaker{font-size:12px}}
+@media(max-height:420px){.ending-dialogue p{font-size:max(12px,1.65cqw)}}

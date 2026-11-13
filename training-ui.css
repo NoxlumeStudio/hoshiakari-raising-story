@@ -1,0 +1,158 @@
+/* 1672×941 の実背景と同一コンテナで位置・サイズを管理する。 */
+body.training-mode{background:#251f17}
+body.training-mode .app-shell{max-width:none;padding:0}
+body.training-mode .topbar,body.training-mode footer{display:none}
+body.training-mode main{padding:0;min-height:0}
+.training-wrap{max-width:1672px;margin:auto;color:#3b2a1c;font-family:"Yu Mincho","Hiragino Mincho ProN",Georgia,serif}
+.training-stage{position:relative;width:min(100%,177.6833dvh);margin:0 auto;aspect-ratio:1672 / 941;container-type:inline-size;overflow:hidden;isolation:isolate;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.training-background{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;pointer-events:none;user-select:none;z-index:-1}
+.training-top-title{position:absolute;left:2.8%;top:.7%;height:5.6%;width:63%;display:flex;align-items:center;gap:2.5%;color:#fbe9b9;text-shadow:0 2px 3px #071e14;font-weight:700;white-space:nowrap}
+.training-top-title h2{font-size:2.05cqw;margin:0;letter-spacing:.09em;color:inherit}
+.training-top-title small{position:absolute;left:25cqw;top:28%;font-size:1.08cqw;letter-spacing:.12em}
+.training-top-button{position:absolute;top:.75%;height:4.8%;border:0;background:transparent;box-shadow:none;color:#f8eac3;font-size:1.13cqw;border-radius:9px;padding:0;font-family:inherit}
+.training-save{left:76.9%;width:9.3%}.training-home{left:87.5%;width:11.2%}
+.training-top-button:hover{background:#fff7dc1c;filter:none}
+.training-portrait{position:absolute;left:.4%;top:6.7%;width:32.1%;height:93.3%;pointer-events:none;z-index:1;overflow:hidden}
+.training-character-slot{position:absolute;inset:0;display:grid;place-items:end center}
+.training-character-slot img{height:100%;width:auto;max-width:100%;object-fit:contain;object-position:center bottom;pointer-events:none;user-select:none}
+.training-girl-label{position:absolute;left:2.3%;top:70%;width:18%;height:6.1%;z-index:4;padding:0 2%;display:flex;align-items:center;justify-content:center;gap:8%;background:linear-gradient(145deg,#19372aeb,#284b37f2);color:#fff1cb;border:2px solid #b99050;border-radius:60px;box-shadow:0 3px 8px #251b0a66;text-shadow:0 1px 2px #111}
+.training-girl-label strong{font-size:2cqw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.training-girl-label span{font-size:1.12cqw;white-space:nowrap}
+.training-girl-speech{position:absolute;left:2%;top:74%;width:30.5%;min-height:0;height:21%;max-height:21%;z-index:3;overflow:hidden;padding:1.05% 1.5%;display:flex;align-items:center;gap:.6cqw;background:#fff8e8ed;border:2px solid #bf9d66;border-radius:16px;color:#3d3020;font:1.17cqw/1.45 "Yu Gothic",sans-serif;box-shadow:0 3px 12px #201b1050}
+.training-speech-text{flex:1 1 auto;min-width:0}
+.training-girl-speech.training-potion-speech{top:73%;height:15%;min-height:0;max-height:15%;overflow:hidden}
+.training-potion-speech #turning-advance,.training-potion-speech #potion-advance,.training-girl-speech #turning-advance{font-size:.98cqw;line-height:1.35;padding:.4em .75em;border-radius:.6cqw;min-width:0;min-height:0;white-space:nowrap}
+.training-stage:has(.training-potion-speech) .training-girl-label{top:68%}
+.training-girl-speech.training-growth-notice{top:48%;left:2%;width:30.5%;height:34%;min-height:0;max-height:34%;padding:1.1% 1.2%;font:1.15cqw/1.42 "Yu Gothic",sans-serif;overflow:hidden;display:flex;flex-direction:column}
+.training-stage:has(.training-growth-notice) .training-girl-label{top:45%}
+.growth-notice-heading{color:#24513a;font-weight:800;margin-bottom:.2em;flex:none}
+.growth-notice-body{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+.training-growth-notice p{margin:.25em 0}
+.growth-notice-close{display:block;flex:none;margin:.35em 0 0 auto;border:1px solid #bd975c;border-radius:6px;background:#284b37;color:#fff3d4;padding:.18em 1.05em;font:700 1em "Yu Gothic",sans-serif;cursor:pointer}
+.training-start:disabled{opacity:.48;cursor:not-allowed;filter:grayscale(.35)}
+.training-date{position:absolute;left:35.7%;top:9.8%;width:62.6%;height:5.4%;display:grid;grid-template-columns:34% 32% 34%;align-items:center;text-align:center;font-weight:700;font-size:1.52cqw;white-space:nowrap}
+.training-date span+span{border-left:1px solid #ad8a58}.training-date strong{color:#28513a}
+.training-statuses{position:absolute;left:35.6%;top:16.5%;width:62.6%;height:6.1%;display:grid;grid-template-columns:repeat(3,1fr)}
+.training-status-item{position:relative;text-align:center;font-size:1.13cqw;font-weight:700}
+/* ストレスの文字とゲージを、ごくわずかに左へ寄せる。 */
+.training-status-item:nth-child(2){transform:translateX(-.35cqw)}
+.status-caption{position:absolute;top:8%;width:100%;white-space:nowrap}.status-caption strong{font-size:1.22cqw;margin-left:.3em}
+.status-meter{position:absolute;top:66%;left:21.5%;width:75%;height:19%;border-radius:99px;overflow:hidden;background:transparent}
+.status-meter span{display:block;height:100%;background:linear-gradient(#bf785a,#9c4d40);border-radius:99px}.status-meter span.positive{background:linear-gradient(#8bb956,#568132)}
+.training-stats{position:absolute;left:34.8%;top:24.6%;width:64.1%;height:20.9%;font-weight:700}
+.training-career-guide{position:absolute;left:69.8%;top:40.3%;width:23.2%;height:4.5%;z-index:2;display:grid;place-items:center;padding:0 .35cqw;border:2px solid #c8a264;border-radius:.65cqw;background:#244b36;box-shadow:none;color:#f6e6b8;font:700 1.18cqw "Yu Mincho",serif;white-space:nowrap;text-align:center;text-shadow:0 1px 1px #10291d}
+.training-career-guide:hover{filter:brightness(1.12)}
+.career-guide-dialog{width:min(890px,94vw);max-width:94vw;max-height:88dvh;overflow:auto;margin:auto;padding:22px 25px 20px;border:3px double #b28d50;border-radius:18px;background:linear-gradient(145deg,#fff8e9,#ecddbd);color:#2e3d2d;box-shadow:0 16px 55px #0009;font-family:"Yu Mincho","Hiragino Mincho ProN",serif}
+.career-guide-dialog::backdrop{background:#0e211bb8}
+.career-guide-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;border-bottom:1px solid #cbb180;padding-bottom:10px}
+.career-guide-head small{font:700 11px Georgia,serif;letter-spacing:.18em;color:#907447}
+.career-guide-head h2{font-size:clamp(23px,2.5vw,31px);margin:3px 0;color:#294c39}
+.career-guide-x{border:1px solid #bc9e6c;background:#fff7e5;color:#395442;font-size:24px;line-height:1;padding:4px 11px}
+.career-guide-intro{font-size:14px;line-height:1.7;margin:12px 0 15px}
+.career-guide-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.career-guide-card{border:1px solid #bea36f;border-radius:10px;padding:13px 16px;background:#fffaf0e8;box-shadow:inset 0 0 0 2px #e6d8b9}
+.career-guide-card h3{font-size:20px;color:#2c523c;margin:0 0 5px}
+.career-guide-card p{font-size:13px;line-height:1.6;margin:5px 0 8px}
+.career-guide-card small{font-size:12px;color:#967342;font-weight:700}
+.career-guide-note{font-size:12px;line-height:1.55;margin:12px 0;color:#756442}
+.career-guide-return{display:block;margin:12px auto 0;min-width:180px;padding:10px 24px;border:1px solid #b9965d;background:#294b36;color:#fff4d9;font-weight:700}
+.training-stat{position:absolute;width:48.8%;height:19%;display:flex;align-items:center;font-size:1.42cqw}
+.training-stat:nth-child(-n+4){left:0}.training-stat:nth-child(n+5){left:51.2%}
+.training-stat:nth-child(1),.training-stat:nth-child(5){top:7%}
+.training-stat:nth-child(2),.training-stat:nth-child(6){top:31%}
+.training-stat:nth-child(3),.training-stat:nth-child(7){top:54%}
+.training-stat:nth-child(4){top:77%}
+.stat-icon{position:absolute;left:5%;width:9%;text-align:center;color:#826338;font-size:1.8cqw}
+.stat-label{position:absolute;left:13%;width:13%;white-space:nowrap}
+/* 画像に描かれたゲージ溝の左端と長さに合わせる（1672px基準）。 */
+.stat-meter{position:absolute;left:27%;width:55.5%;height:21%;top:41%;background:transparent;overflow:hidden;border-radius:99px}
+.training-stat:nth-child(n+5) .stat-meter{left:25.5%;width:55.5%}
+.stat-meter span{display:block;height:100%;border-radius:99px;background:linear-gradient(#7ca346,#3e7333);box-shadow:inset 0 1px 1px #c6e6a5}
+.training-stat strong{position:absolute;right:7%;width:11%;text-align:right;font-size:1.36cqw}
+.training-plan-list{position:absolute;left:34%;top:48.4%;width:65.2%;height:35.5%;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;column-gap:2.5%;row-gap:5%}
+.training-plan-card{position:relative;border:0;background:transparent;border-radius:12px;box-shadow:none;color:#402b1f;min-width:0;padding:0;font-family:inherit;text-align:left}
+.training-plan-card:hover{background:#ffffff20;filter:none}.training-plan-card:focus-visible{outline-offset:-6px;outline:3px solid #52754b}
+.training-card-number{position:absolute;top:12%;left:5%;padding:.15em .5em;background:#244833;color:#fff1ca;border:1px solid #a88343;border-radius:4px;font-size:1.12cqw;line-height:1.4;box-shadow:0 2px 3px #4d351f55}
+.training-card-number span{font-size:.9em;color:#d8b36c}
+.training-action-icon{position:absolute;left:7.5%;top:34%;width:25%;height:42%;display:grid;place-items:center;font-family:Georgia,serif;color:#86603a;font-size:3.4cqw;text-shadow:0 2px 2px #fff9e6}
+.training-card-title{position:absolute;left:36%;top:24%;width:59%;font-size:2.03cqw;line-height:1.25;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.training-card-effect{position:absolute;left:36%;top:51%;width:60%;border-top:1px solid #bfa375;padding-top:2%;font-size:1.01cqw;line-height:1.3;white-space:normal;color:#624c35}
+.training-card-burden{position:absolute;left:36%;top:72%;width:62%;font-size:.9cqw;line-height:1.25;color:#835b44;white-space:nowrap}
+.training-cost{position:absolute;left:35.4%;top:89%;height:5.4%;width:32.4%;display:flex;align-items:center;justify-content:center;gap:4%;font-size:1.16cqw;font-weight:700;white-space:nowrap}
+.training-cost strong{font-size:1.35cqw;color:#245138}.training-cost small{font-size:.7cqw;color:#88725b}
+.training-start{position:absolute;left:70.4%;top:87.2%;width:27.6%;height:9.2%;display:flex;align-items:center;justify-content:center;gap:.4cqw;min-width:0;min-height:0;padding:0 1cqw;overflow:hidden;background:transparent;border:0;box-shadow:none;color:#f9edc9;font-size:1.95cqw;line-height:1.1;font-family:inherit;text-shadow:0 2px 3px #06180f;white-space:nowrap}
+.training-start span{margin-left:.15em}.training-start:hover{background:#e0d79b10;filter:brightness(1.1)}
+.training-below{padding:10px 20px 20px;background:#f1e4c9;font-family:"Yu Gothic",sans-serif}
+.training-warnings{position:absolute;left:2%;top:11%;width:30.5%;max-height:12%;z-index:3;display:flex;flex-direction:column;gap:3px;overflow:auto;scrollbar-width:thin}.training-warnings p{margin:0;padding:.35em .65em;background:#fff1e3e9;border:1px solid #cd957b;border-radius:7px;color:#8d443a;font-size:.89cqw;line-height:1.3}
+.training-warning-ticker{height:7%;max-height:none;display:block;overflow:hidden;background:#fff6e8f5;border:2px solid #b36e4c;border-radius:.65cqw;color:#71342b;font:800 1.16cqw/1.35 "Yu Gothic",sans-serif;white-space:nowrap;box-shadow:0 3px 12px #1b160b88}
+.warning-ticker-track{display:flex;align-items:center;width:max-content;height:100%;animation:warning-ticker-slide 24s linear infinite}
+.warning-ticker-track span{display:block;white-space:nowrap;padding:0 2em}
+.training-warning-ticker:hover .warning-ticker-track,.training-warning-ticker:focus-within .warning-ticker-track{animation-play-state:paused}
+@keyframes warning-ticker-slide{to{transform:translateX(-50%)}}
+.training-warnings:not(.training-warning-ticker) p{font-size:clamp(13px,1.03cqw,19px);line-height:1.45}
+@media(prefers-reduced-motion:reduce){.warning-ticker-track{animation:none}}
+.training-help{display:flex;justify-content:space-between;gap:10px;margin:6px 0;color:#6e634f;font-size:12px}
+.training-debug{text-align:right}.training-debug>button{background:transparent;border:0;text-decoration:underline;font-size:12px;color:#77664c}.training-debug #debugMount{text-align:left}
+/* 画面下部の説明と開発ボタンはプレイ中には見せず、必要な警告だけ残す。 */
+body.training-mode .training-help,body.training-mode .training-debug{display:none}
+body.training-mode .training-below{padding:0;background:transparent}
+body.training-mode .training-warnings:not(:empty):not(.training-warning-ticker){padding:0;background:transparent}
+/* 状態パネルは各溝の始点が均等間隔ではないため個別に補正する。 */
+.training-status-item:first-child .status-meter{left:15%;width:74%}
+.training-status-item:nth-child(2) .status-meter{left:19.5%;width:74%}
+.training-picker{max-width:min(1240px,96vw);max-height:calc(100dvh - 32px);width:100%;border:2px solid #a78351;border-radius:15px;background:#f7eed9;color:#322e23;box-shadow:0 16px 60px #0008;padding:16px;overflow:auto;font-family:"Yu Gothic",sans-serif}
+.training-picker::backdrop{background:#0f1c16a8}.picker-head{display:flex;align-items:flex-start;justify-content:space-between;border-bottom:1px solid #d7c49f;padding-bottom:12px;margin-bottom:13px}.picker-head h2{margin:4px 0;color:#304b3b;font-size:23px}.picker-head small{font-size:12px;color:#967949}.picker-close{font-size:25px;border:0;background:transparent;padding:0 10px}
+.picker-actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}.picker-action{display:grid;grid-template-columns:34px 1fr;gap:8px;text-align:left;padding:10px;min-height:168px;background:#fffaf0;border:1px solid #d0bb92}.picker-action.selected{border-color:#3f7450;box-shadow:inset 0 0 0 2px #4f8a60}.picker-icon{font-size:26px;color:#846039;text-align:center}.picker-action strong{display:block;color:#345544}.picker-action small{display:block;font-size:11px;margin:4px 0;color:#79664b}.picker-burden{display:block;font-size:11px;font-weight:700;color:#8d5943;margin:4px 0}.picker-desc{display:block;font-size:11px;font-weight:400;line-height:1.45}
+/* 幅だけで縦積みに切り替えると、PCのブラウザ拡大時にも横長の画面が崩れる。
+   画面の向きも確認し、横長では背景と操作領域を同じ座標系で縮尺する。 */
+@media(max-width:1050px) and (orientation:portrait){
+ .picker-actions{grid-template-columns:repeat(2,minmax(0,1fr))}.picker-action{min-height:138px}
+ .training-status-item:nth-child(2){transform:none}
+ body.training-mode{background:#e9dfc9}
+ .training-wrap{max-width:100%}
+ .training-stage{width:100%;aspect-ratio:auto;container-type:normal;display:grid;grid-template-columns:minmax(220px,33%) minmax(0,1fr);grid-template-areas:"head head" "portrait date" "portrait status" "portrait stats" "portrait cards" "portrait cost" "portrait start";gap:10px;padding:10px;overflow:visible;background:#f0dfc1}
+ .training-background{display:none}
+ .training-top-title,.training-top-button,.training-portrait,.training-girl-label,.training-girl-speech,.training-date,.training-statuses,.training-stats,.training-career-guide,.training-plan-list,.training-cost,.training-start{position:static;width:auto;height:auto;min-height:0;max-height:none}
+ .training-top-title{grid-area:head;margin:-10px -10px 0;padding:11px 18px 56px;background:#203c30;white-space:normal;min-height:96px}
+ .training-top-title h2{font-size:22px}.training-top-title small{position:static;font-size:12px}
+ .training-top-button{position:absolute;top:11px;width:auto;height:34px;padding:4px 12px;border:1px solid #af8b52;font-size:12px;background:#3b3328;border-radius:7px;z-index:2}
+ .training-save{left:auto;right:114px}.training-home{left:auto;right:10px}
+ .training-portrait{grid-area:portrait;background:#574333 url('assets/elsen_training_ui_bg_v2.webp') left center/auto 100% no-repeat;min-height:400px;border:3px ridge #af8959;border-radius:12px;position:relative;overflow:hidden}
+ .training-girl-label{grid-area:portrait;z-index:1;align-self:end;justify-self:start;margin:0 0 16px 12px;padding:6px 14px;display:flex;gap:8px;box-shadow:0 3px 8px #251b0a55}.training-girl-label strong{font-size:22px}.training-girl-label span{font-size:14px}
+ .training-girl-speech{grid-area:portrait;z-index:1;align-self:start;justify-self:center;margin-top:24px;width:88%;font-size:13px;padding:10px}
+ .training-girl-speech.training-potion-speech{position:static;top:auto;height:auto;max-height:none;min-height:0;overflow:visible}
+ .training-stage:has(.training-potion-speech) .training-girl-label{top:auto}
+ .training-warnings{position:static;grid-area:portrait;align-self:start;justify-self:center;width:90%;max-height:100px;margin:7px 0 0;z-index:3}.training-warnings p{font-size:11px}
+ .training-warning-ticker{height:48px;max-height:48px;font-size:15px;border-radius:7px}
+ .training-stage:has(.training-warnings) .training-girl-speech:not(.training-growth-notice){margin-top:105px}
+ .training-girl-speech.training-growth-notice{position:static;width:88%;height:clamp(220px,36vh,340px);max-height:340px;min-height:0;padding:10px;font-size:13px;margin-top:24px}
+ .training-date{grid-area:date;display:grid;background:#fff6e5;border:1px solid #c4aa79;border-radius:9px;padding:12px 5px;font-size:clamp(12px,1.6vw,17px)}
+ .training-statuses{grid-area:status;display:grid;background:#fff6e5;border:1px solid #c4aa79;border-radius:9px;padding:9px;gap:5px}
+ .training-status-item{min-height:48px;font-size:13px}.status-caption{position:static}.status-caption strong{font-size:14px}.status-meter,.training-status-item:first-child .status-meter,.training-status-item:nth-child(2) .status-meter{top:57%;left:9%;width:82%;height:10px;background:#d3c6b0}
+ .training-stats{grid-area:stats;background:#fff6e5;border:1px solid #c4aa79;border-radius:9px;display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:12px}
+ .training-career-guide{grid-area:stats;align-self:end;justify-self:end;z-index:2;width:42%;height:30px;margin:0 18px 8px 0;font-size:12px;border-radius:7px}
+ .training-stat{position:relative!important;left:auto!important;top:auto!important;width:auto;height:27px;font-size:14px}.stat-icon{font-size:19px;left:0}.stat-label{left:14%;width:23%}.stat-meter,.training-stat:nth-child(n+5) .stat-meter{left:39%;width:42%;height:9px;top:10px;background:#d3c6b0}.training-stat strong{font-size:14px;right:0}
+ .training-plan-list{grid-area:cards;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .training-plan-card{height:110px;background:#fff6e5;border:1px solid #b89b6d}.training-card-number{font-size:11px;left:7px;top:6px}.training-action-icon{font-size:27px;left:5%;top:36%;width:25%}.training-card-title{font-size:clamp(15px,2vw,20px);left:34%;top:19%}.training-card-effect{font-size:11px;left:34%;top:52%;width:62%}.training-card-burden{font-size:10px;left:34%;top:80%}
+ .training-cost{grid-area:cost;background:#fff6e5;border:1px solid #b89b6d;border-radius:9px;padding:12px;font-size:13px;display:flex;flex-wrap:wrap}.training-cost strong{font-size:15px}.training-cost small{font-size:10px}
+ .training-start{grid-area:start;min-height:55px;font-size:24px;background:#234832;border:2px solid #a7854c;border-radius:12px;box-shadow:inset 0 0 0 3px #385d45,0 3px 8px #0002}
+ .training-below{padding:10px}
+}
+@media(max-width:650px) and (orientation:portrait){
+ .training-stage{grid-template-columns:1fr;grid-template-areas:"head" "portrait" "date" "status" "stats" "cards" "cost" "start"}
+ .training-top-title{padding:12px 10px 105px;flex-wrap:wrap}.training-top-title h2{font-size:21px}.training-top-title small{font-size:11px}
+ .training-top-button{top:54px;height:29px}.training-save{right:116px}.training-home{right:10px}
+ .training-portrait{min-height:235px;background-size:cover;background-position:left 36%}
+ .training-portrait:has(.training-growth-notice){min-height:330px}
+ .training-girl-speech{justify-self:end;width:57%;margin-right:12px;max-height:100px}
+ .training-girl-speech.training-growth-notice{width:88%;max-height:220px;margin-right:0}
+ .training-girl-label{margin-bottom:10px}
+ .training-date{font-size:12px}.training-date span{line-height:1.6}.training-statuses{grid-template-columns:repeat(3,1fr)}
+ .training-stats{gap:5px}.training-stat{font-size:12px}.stat-icon{font-size:15px}.stat-label{left:15%}.stat-meter,.training-stat:nth-child(n+5) .stat-meter{left:40%;width:39%}
+ .training-career-guide{position:static;grid-area:auto;width:100%;height:40px;margin:0;font-size:14px}
+ .training-stage{grid-template-areas:"head" "portrait" "date" "status" "stats" "guide" "cards" "cost" "start"}
+ .training-career-guide{grid-area:guide}
+ .career-guide-cards{grid-template-columns:1fr}.career-guide-dialog{padding:15px;max-height:90dvh}
+ .training-plan-card{height:106px}.training-card-title{font-size:16px}.training-card-effect{font-size:10px}
+ .training-help{display:block}.training-help span{display:block;margin-top:5px}
+ .picker-actions{grid-template-columns:1fr}.picker-action{min-height:88px}
+}
